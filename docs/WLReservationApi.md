@@ -70,6 +70,13 @@ Delete a reservation.
 
 ### Example 
 ```objc
+WLConfiguration *apiConfig = [WLConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: api_key)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"X-API-Key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"X-API-Key"];
+
 
 WLReservationRequest* body = [[WLReservationRequest alloc] init]; // Reservation Data
 
@@ -95,7 +102,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

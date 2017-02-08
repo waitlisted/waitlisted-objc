@@ -185,7 +185,7 @@ NSInteger kWLReservationApiMissingParamErrorCode = 234513;
     NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[];
+    NSArray *authSettings = @[@"api_key"];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
