@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "WLReservationsResponse.h"
-#import "WLReservation.h"
-#import "WLErrorResponse.h"
 #import "WLReservationRequest.h"
+#import "WLErrorResponse.h"
+#import "WLReservation.h"
 #import "WLApi.h"
 
 /**
@@ -36,6 +36,20 @@ extern NSString* kWLReservationApiErrorDomain;
 extern NSInteger kWLReservationApiMissingParamErrorCode;
 
 +(instancetype) sharedAPI;
+
+/// 
+/// Activate a reservation.
+///
+/// @param body Reservation Data
+/// 
+///  code:200 message:"activated successfully",
+///  code:401 message:"invalid api_key header",
+///  code:404 message:"site/reservation not found"
+///
+/// @return WLReservationsResponse*
+-(NSNumber*) activateReservationWithBody: (WLReservationRequest*) body
+    completionHandler: (void (^)(WLReservationsResponse* output, NSError* error)) handler;
+
 
 /// 
 /// Creates a new reservation.

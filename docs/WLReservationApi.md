@@ -4,10 +4,67 @@ All URIs are relative to *https://www.waitlisted.co/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**activateReservation**](WLReservationApi.md#activatereservation) | **POST** /reservations/activate | 
 [**createReservation**](WLReservationApi.md#createreservation) | **POST** /reservations | 
 [**deleteReservation**](WLReservationApi.md#deletereservation) | **DELETE** /reservations | 
 [**getReservation**](WLReservationApi.md#getreservation) | **GET** /reservations | 
 
+
+# **activateReservation**
+```objc
+-(NSNumber*) activateReservationWithBody: (WLReservationRequest*) body
+        completionHandler: (void (^)(WLReservationsResponse* output, NSError* error)) handler;
+```
+
+
+
+Activate a reservation.
+
+### Example 
+```objc
+WLConfiguration *apiConfig = [WLConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: api_key)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"X-API-Key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"X-API-Key"];
+
+
+WLReservationRequest* body = [[WLReservationRequest alloc] init]; // Reservation Data
+
+WLReservationApi*apiInstance = [[WLReservationApi alloc] init];
+
+[apiInstance activateReservationWithBody:body
+          completionHandler: ^(WLReservationsResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling WLReservationApi->activateReservation: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**WLReservationRequest***](WLReservationRequest*.md)| Reservation Data | 
+
+### Return type
+
+[**WLReservationsResponse***](WLReservationsResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createReservation**
 ```objc
